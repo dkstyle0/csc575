@@ -64,9 +64,9 @@ def stopAndStem(testvar):
       openTag = False
     elif not openTag:
       if word:
-        print "Found word: " + unicode(word) + "\n"
+        #print "Found word: " + unicode(word) + "\n"
         if (word not in stopList):
-          if (p.stem(word, 0,len(word)-1) == 'take'):
+          if (p.stem(word, 0,len(word)-1) == 'yang'):
             doc1 = open('./takewords.json', 'a')
             doc1.write(word + '\n')
           output += p.stem(word, 0,len(word)-1)
@@ -75,6 +75,16 @@ def stopAndStem(testvar):
   return output
 
 
+def tfidf(termInfo, numDocs):
+  nk = termInfo["docs"]
+  idf = math.log( (float(numDocs) / float(nk)), 2)
+  newPostingList = []
+  for post in termInfo["Postings"]:
+    x = post[1]
+    newWt = float(x) * (idf)
+    tup2 = post + (newWt,)
+    newPostingList.append(tup2)
+  termInfo["Postings"] = newPostingList
 
 
 
@@ -114,20 +124,24 @@ for testvar in testList:
   if (post_id != '834770'):
     myDict = addTermsToDict(myDict, output.split(), post_id)
   print output + '\n'
-  ensure_dir('./' + str(post_id))
-  testvar["output"] = output
-  pickleFile = open('./' + str(post_id) + '/postPickle', 'wb+')
-  pickle.dump(testvar, pickleFile)
+  if (len(output) > 0):
+    ensure_dir('./' + str(post_id))
+    testvar["output"] = output
+    pickleFile = open('./' + str(post_id) + '/postPickle', 'wb+')
+    pickle.dump(testvar, pickleFile)
 
 print '\n\n'
+
+totalDocs = myDict['TOTAL_DOCS']
 
 for term in sorted(myDict):
   if (term != 'TOTAL_DOCS'):
     s = ''
     dictTerm = myDict[term]
+    tfidf(dictTerm, totalDocs)
     s += "Term: " + unicode(term) + ": N Docs: " + unicode(dictTerm["docs"]) + ", Tot Freq: " + unicode(dictTerm["TotalCount"]) + ", Postings:\n\t\t"
     for post in dictTerm["Postings"]:
-      s += "Doc#: " + unicode(post[0]) + ", Freq: " + unicode(post[1]) + " -> "
+      s += "Doc#: " + unicode(post[0]) + ", Freq: " + unicode(post[1]) + ", Wt: " + unicode(post[2]) + " -> "
     s += "null"
     print s
 
