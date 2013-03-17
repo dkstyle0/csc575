@@ -67,8 +67,9 @@ def stopAndStem(testvar):
         #print "Found word: " + unicode(word) + "\n"
         if (word not in stopList):
           if (p.stem(word, 0,len(word)-1) == 'yang'):
-            doc1 = open('./takewords.json', 'a')
-            doc1.write(word + '\n')
+            print word
+            #doc1 = open('./takewords.json', 'a')
+            #doc1.write(word + '\n')
           output += p.stem(word, 0,len(word)-1)
           output += ' '
         word = ''
@@ -145,3 +146,5 @@ for term in sorted(myDict):
     s += "null"
     print s
 
+dictionaryFile = open('./dictionary', 'wb+')
+pickle.dump(myDict, dictionaryFile)
