@@ -26,7 +26,78 @@ python parsePosts.py 5000
 ## TO RUN WITH THE INCLUDED SAMPLE POSTS FILE
 python parsePosts.py 5000 sample
 
-This will run for a longish time for all the records, so I limited it to the first 5,000 documents for my example, but changing the command line variable will change the number parsed.  Once this is done, you can run the search program:
+This will run for a longish time for all the records, so I limited it to the first 5,000 documents for my example, but changing the command line variable will change the number parsed.  For example, here it is being run with just the first two documents:
+
+
+
+> python parsePosts.py 2 sample
+3
+iso-8859-1
+Matt on Not-WordPress
+I took part in the <a href="http://en.blog.wordpress.com/2012/04/10/automattics-worldwide-wp-5k/">Automattic Wordwide WordPress 5k</a>, in what is becoming a yearly tradition. To switch it up I ran it barefoot along the soft white sand beach near Seaside, FL. Here's how the route ended up, ended up about 5.7k:
+
+<a href="http://runkeeper.com/user/photomatt/activity/84752773"><img alt="" src="http://f.cl.ly/items/2F183y0d361n1S35091C/Screen%20Shot%202012-04-29%20at%205.59.40%20PM.png" class="alignnone" width="723" height="482" /></a>
+
+Took some cool pictures along the way that I'll post now.
+automatt wordwid wordpress becom yearli tradit switch ran barefoot soft white sand beach near seasid fl rout cool pictur ll post 
+
+Matt on Not-WordPress
+<a href="http://matt.files.wordpress.com/2012/04/photo31.jpg"><img src="http://matt.files.wordpress.com/2012/04/photo31.jpg" alt="" title="photo31" width="1000" height="750" class="alignnone size-full wp-image-3930" /></a>
+
+
+Matt on Not-WordPress
+<a href="http://matt.files.wordpress.com/2012/04/photo32.jpg"><img src="http://matt.files.wordpress.com/2012/04/photo32.jpg" alt="" title="photo32" width="1000" height="750" class="alignnone size-full wp-image-3932" /></a>
+
+
+
+
+
+Term: automatt: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: barefoot: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: beach: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: becom: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: cool: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: fl: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: ll: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: near: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: pictur: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: post: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: ran: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: rout: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: sand: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: seasid: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: soft: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: switch: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: tradit: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: white: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: wordpress: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: wordwid: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+Term: yearli: N Docs: 1, Tot Freq: 1, Postings:
+                Doc#: 24766, Freq: 1, Wt: 1.58496250072 -> null
+
+
+
+Once this is done, you can run the search program:
 
 python search.py
 
