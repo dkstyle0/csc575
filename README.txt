@@ -2,13 +2,17 @@
 
 I created a basic search program that uses a number of annotated blog posts provided by a company called Kaggle.  They offer a number of such data sets for competition purposes, and I found this one that had a lot of general topic posts as well as a number of political posts, along with information on which users have marked that they liked.  My original idea was to be able to categorize groups of users into various groups along political lines and then to be able to offer suggestions for articles that are something they would probably like as well as articles from other groups of users.  I wasn't able to find a great data set to really accomplish this well, and due to time constraints I instead implemented just a basic document search.  
 
-The file I used can be downloaded with this link:
+I implemented my project using the python language, since I did a lot of the homeworks with it and could reuse some code.  To get the resources, unzip the file included or get it from my github:
+
+git clone https://github.com/dkstyle0/csc575.git
+
+The data file I used can be downloaded with this link:
 
 http://www.kaggle.com/c/predict-wordpress-likes/download/testPosts.zip
 
 This is about 1GB after being unzipped and contains about 200,000 lines of json for each blog post, so I couldn't include it in the zipped resources.  
 
-I implemented my project using the python language, since I did a lot of the homeworks with it and could reuse some code.  To start, I implemented a search of the documents by creating an inverse document matrix with raw term weights.  I made use of a python version of Porter's Stemmer algorithm that I found here:
+To start, I implemented a search of the documents by creating an inverse document matrix with raw term weights.  I made use of a python version of Porter's Stemmer algorithm that I found here:
 
 http://tartarus.org/~martin/PorterStemmer/python.txt
 
