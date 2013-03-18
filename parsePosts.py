@@ -119,8 +119,16 @@ def tfidf(termInfo, numDocs):
 
 
 # Start script
+doc1 = None
+useSample = None
+if (len(sys.argv) > 2):
+  print len(sys.argv)
+  useSample = sys.argv[2]
 
-doc1 = open('./testPosts.json', 'r')
+if (useSample == 'sample'):
+  doc1 = open('./testPosts.json.sample', 'r')
+else:
+  doc1 = open('./testPosts.json', 'r')
 testList = []
 testvar = {}
 myDict = {}
@@ -149,7 +157,6 @@ for rawline in doc1:
     break
   else:
     i += 1
-    print i, numPosts
 
 for testvar in testList:
   post_id = testvar["post_id"]
