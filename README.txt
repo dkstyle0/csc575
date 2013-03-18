@@ -10,7 +10,7 @@ The data file I used can be downloaded with this link:
 
 http://www.kaggle.com/c/predict-wordpress-likes/download/testPosts.zip
 
-This is about 1GB after being unzipped and contains about 200,000 lines of json for each blog post, so I couldn't include it in the zipped resources.  
+This is about 1GB after being unzipped and contains about 200,000 lines of json for each blog post, so I couldn't include it in the zipped resources.  I did include a sample file that can be called using the 'sample' runtime argument (see below).  The sample contains the first 5000 lines of the collection.  
 
 To start, I implemented a search of the documents by creating an inverse document matrix with raw term weights.  I made use of a python version of Porter's Stemmer algorithm that I found here:
 
@@ -20,7 +20,11 @@ Once I made this, I used the TFxIDF calculation to change the weights.  As the f
 
 The file that does this is parsePosts.py.  After unzipping the source documents and downloading the testPosts file to the same directory, run:
 
+## TO RUN WITH THE NORMAL TESTPOSTS FILE
 python parsePosts.py 5000
+
+## TO RUN WITH THE INCLUDED SAMPLE POSTS FILE
+python parsePosts.py 5000 sample
 
 This will run for a longish time for all the records, so I limited it to the first 5,000 documents for my example, but changing the command line variable will change the number parsed.  Once this is done, you can run the search program:
 
