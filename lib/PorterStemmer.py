@@ -1,5 +1,7 @@
 import sys
 
+
+##  Taken from: http://tartarus.org/~martin/PorterStemmer/python.txt
 class PorterStemmer:
 
     def __init__(self):
